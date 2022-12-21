@@ -130,4 +130,37 @@
   // readonly 여서 에러 발생
 
 
+  // tuple 튜플 
+  const player : readonly [string, number, boolean] = ["nico", 12, false]
+  ```
+
+# 2_4
+  - unknown
+    - 변수값의 타입을 모를 때 사용
+  - void
+    - 아무것도 return 하지 않는 함수를 대상으로 사용
+    - 따로 지정해줄 필요는 없다
+  - never
+    - 함수가 절대 return하지 않을 때 발생한다
+  ```typescript
+  let a:unknown;
+
+  if(typeof a === 'number'){
+    let b = a + 1
+  }
+  if(typeof a === 'string'){
+    let b = a.toUpperCase();
+  }
+
+  // never
+  function hello(name:string|number){
+    if(typeof name === "string"){
+      name
+    } else if (typeof name === "number"){
+      name
+    } else {
+      name
+    }
+  }
+
   ```
