@@ -150,3 +150,38 @@
 
   const a = superPrint([1, 2, 3, 4], "x");
   ```
+
+# 3_4 Conclusions
+
+- typescript가 타입을 유추하도록 하는 것이 좋다
+- 라이브러리나 코드를 디자인할 때 제네릭을 사용한다
+
+  ```typescript
+  type Player<E> = {
+    name: string;
+    extraInfo: E;
+  };
+
+  type person1Extra = {
+    favFood: string;
+  };
+
+  type person1Player = Player<person1Extra>;
+
+  const person1: Player<{ favFood: string }> = {
+    name: "person1",
+    extraInfo: {
+      favFood: "ramem",
+    },
+  };
+  ```
+
+  ```typescript
+  type arrNumbers = Array<number>;
+
+  let a: A = [1, 2, 3, 4];
+
+  function printAllNumbers(arr: number);
+
+  function pruntAllnumbers2(arr: Array<number>);
+  ```
